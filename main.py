@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+
 def getData():
     return pd.read_csv("https://huggingface.co/datasets/ankislyakov/titanic/resolve/main/titanic_train.csv")
+
 
 def filterData(data, selected_age_category):
     if selected_age_category == 'Молодой':
@@ -12,6 +14,7 @@ def filterData(data, selected_age_category):
     else:
         filtered_df = data[data['Age'] >= 60]
     return filtered_df
+
 
 st.title("Программная инженерия: лабораторная работа №3")
 st.header("Вариант-11 (Тихомиров Алексей)")
